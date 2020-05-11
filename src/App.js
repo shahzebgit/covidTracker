@@ -1,26 +1,40 @@
 import React from 'react';
 
 import { Cards, Charts, CountryPicker } from './components';
-import { fetchData } from './api';
+import { fetchData, fetchCountryData } from './api';
 import styles from './App.module.css'
 
 class App extends React.Component {
 
     state={
         data:{ },
+        country:''
     }
-    async componentDidMount() {
+    async componentDidMount(country) {
         const fetchedData = await fetchData();
-        
-        this.setState({data:fetchedData})
+    
+        this.setState({
+            data:fetchedData,
+
+        })
     }
+
+    handleChange = async(country)=>{
+        const fetchedData = await fetchData(country);
+        this.setState({
+            data:fetchedData,
+            country:country
+        })
+    }
+
+
     render() {
-        const { data } = this.state;
+        const { data,country } = this.state;
         return (
             <div className={styles.container}>
-                <Cards data={data} />
-                <Charts />
-                <CountryPicker />
+                <Cards data={data}/>
+                <CountryPicker handleChange={this.handleChange} />
+                <Charts data={data} country={country}/>
             </div>
         )
 
