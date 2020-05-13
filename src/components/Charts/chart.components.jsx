@@ -4,9 +4,9 @@ import { fetchDailyData } from "../../api";
 
 import styles from "./charts.module.css";
 
-const Charts = () => {
-    // useState return an array, not an object
-  const   [dailyData,setDailyData ] = useState([]);
+const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
+  // useState return an array, not an object
+  const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -15,8 +15,7 @@ const Charts = () => {
     fetchAPI();
   }, []);
 
-  const lineChart =
- ( dailyData.length ?(
+  const lineChart = dailyData.length ? (
     <Line
       data={{
         labels: dailyData.map(({ date }) => date),
@@ -37,13 +36,36 @@ const Charts = () => {
         ],
       }}
     />
-  ):null
-  )
+  ) : null;
+
+  console.log(confirmed,recovered,deaths );
+
+  const barChart = 
+  (confirmed
+   ? (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: [
+              "rgba(0,0,255, 0.5)",
+              "rgba(2, 70, 2, 0.5)",
+              "rgba(255,0,0,0.5)",
+            ],
+            data:[confirmed.value, recovered.value,deaths.value,],
+          }]     
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in ${country} ` },
+      }}
+    />
+  ) : null);
 
   return (
-      <div className={styles.container} >
-          {lineChart}
-      </div>
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
   );
 };
 
