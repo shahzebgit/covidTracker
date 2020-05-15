@@ -16,7 +16,7 @@ useEffect(()=>{
     return(
         <FormControl className={styles.formControl}>
             <NativeSelect defaultValue='' onChange={(e)=>{handleChange(e.target.value)}} >
-                <option value="global">Select the countries</option>
+                <option value="">Select the countries</option>
     {fetchedCountries.map((c,i)=><option key={i} value={c}>{c}</option> )}
             </NativeSelect>
         </FormControl>
