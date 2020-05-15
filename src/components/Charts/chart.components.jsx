@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import { fetchDailyData } from "../../api";
-
+import cx from 'classnames';
 import styles from "./charts.module.css";
 
 const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
@@ -16,7 +16,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   }, []);
 
   const lineChart = dailyData.length ? (
-    <Line
+    <Line 
       data={{
         labels: dailyData.map(({ date }) => date),
         datasets: [
@@ -38,7 +38,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  console.log(confirmed,recovered,deaths );
+
 
   const barChart = 
   (confirmed
@@ -65,7 +65,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   ) : null);
 
   return (
-    <div className={styles.container}>{country ? barChart : lineChart}</div>
+    <div className={cx(styles.container)}>{country ? barChart : lineChart}</div>
   );
 };
 
