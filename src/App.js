@@ -3,6 +3,9 @@ import React from "react";
 import { Cards, Charts, CountryPicker ,Footer} from "./components";
 import { fetchData } from "./api";
 import styles from "./App.module.css";
+// import MySelectionTabs from './components/Tabs/tab-selection.component';
+import SimpleTable from './components/Table/table.component'
+
 
 import coronaImage from "./images/covid.png";
 
@@ -33,11 +36,14 @@ class App extends React.Component {
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} />
         <Cards data={data} />
+        {/* <MySelectionTabs /> */}
+        <SimpleTable />
         <CountryPicker handleChange={this.handleChange} />
         <Charts
           data={data}
           country={country}
         />
+        
         <Footer/>
       </div>
     );
