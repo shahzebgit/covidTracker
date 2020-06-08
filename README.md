@@ -64,6 +64,5 @@ Data is fetched from different sources as given below.
 
 ## Deployment Status
 
-[![Netlify Status]([![Heroku CI Status](https://covid-stats-live.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/{9c3a3f6b}/tests)
-](https://app.netlify.com/sites/covid19trackerbk/deploys)
+![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=projects.html)
 ---
