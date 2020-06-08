@@ -1,10 +1,13 @@
+
 # COVID-19 Tracker
 
 This tracker aims to show the numbers & trends of people affected, recovered and deceased due to COVID-19 - Data classified under 3 categories.
 
-
 <!--* India (All States/UTs)-->
 * World (All Countries)
+
+## Deployment Status
+![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=projects.html)
 
 [Live Demo](https://covid-stats-live.herokuapp.com/)
 ---
@@ -60,9 +63,4 @@ Data is fetched from different sources as given below.
 
 <!--| India      | https://api.covid19india.org/                                      |-->
 | World      | https://covid19.mathdro.id/api/                                     |
----
-
-## Deployment Status
-
-![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=projects.html)
 ---
