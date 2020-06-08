@@ -2,11 +2,11 @@
 
 This tracker aims to show the numbers & trends of people affected, recovered and deceased due to COVID-19 - Data classified under 3 categories.
 
-* Tamil Nadu (All Districts)
-* India (All States/UTs)
+
+<!--* India (All States/UTs)-->
 * World (All Countries)
 
-[Live Demo](https://covid19trackerbk.netlify.app/)
+[Live Demo](https://covid-stats-live.herokuapp.com/)
 ---
 
 ## Technologies used 🛠️
@@ -33,7 +33,7 @@ To setup the app for development on your local machine, please follow the instru
 1. Clone the repo to your machine
 
 ```bash
-git clone https://github.com/dynamicbalaji/covid19-tracker.git
+git clone https://github.com/shahzebgit/covidTracker.git
 ```
 
 2. Install necessary packages
@@ -58,15 +58,12 @@ Data is fetched from different sources as given below.
 | Category   | API URL                                                             |
 | -----------| ------------------------------------------------------------------- |
 
-//| India      | https://api.covid19india.org/                                       |
+<!--| India      | https://api.covid19india.org/                                      |-->
 | World      | https://covid19.mathdro.id/api/                                     |
 ---
 
 ## Deployment Status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bd42aef8-0396-4a33-9169-2b4888f72696/deploy-status)](https://app.netlify.com/sites/covid19trackerbk/deploys)
+[![Netlify Status]([![Heroku CI Status](https://covid-stats-live.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/{9c3a3f6b}/tests)
+](https://app.netlify.com/sites/covid19trackerbk/deploys)
 ---
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
