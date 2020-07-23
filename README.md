@@ -7,6 +7,7 @@ This tracker aims to show the numbers & trends of people affected, recovered and
 * World (All Countries)
 
 ## Deployment Status
+
 ![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=projects.html)
 
 [Live Demo](https://covid-stats-live.herokuapp.com/)
